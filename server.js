@@ -9,11 +9,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({
-    origin: 'http://localhost:5173',  // Allow only this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],  // You can specify allowed methods
-    credentials: true,  // Allow cookies to be sent with the request (optional)
-  }));
+app.use(cors({ origin: 'https://spotify-fe-two.vercel.app' }));
 app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
