@@ -10,6 +10,7 @@ connectDB();
 
 const app = express();
 app.use(cors({ origin: 'https://spotify-fe-two.vercel.app' }));
+app.use(bodyParser.json());
 
 app.use('/api/auth', authRoutes);
 app.use("/api/playlists", playlistRoutes);
